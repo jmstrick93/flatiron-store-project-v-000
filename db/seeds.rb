@@ -28,3 +28,8 @@ end
     password: password
   )
 end
+
+User.all.each do|u|
+  u.carts.create
+  u.orders.create
+end
