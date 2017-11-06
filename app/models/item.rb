@@ -7,4 +7,9 @@ class Item < ActiveRecord::Base
 
   belongs_to :category
 
+
+  def self.available_items
+    self.all.collect {|item| item.inventory == 0 ? nil : item}.compact
+  end
+
 end

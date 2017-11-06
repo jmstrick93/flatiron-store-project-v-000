@@ -1,0 +1,6 @@
+<% if !logged_in? %>
+  <%= link_to "sign in", login_path %> |
+  <%= link_to "Sign up", signup_path %>
+<% else %>
+  <p>Signed in as <%= current_user.email %></p>
+<% end %>

@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:show]
 
   post 'carts/:id/checkout', to: 'carts#checkout', as: 'checkout'
+  get 'login', to: 'sessions#login', as: 'login'
+  post 'login', to: 'sessions#create'
+  get 'signup', to: 'sessions#signup', as: 'signup'
 
 end
