@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#login', as: 'login'
   post 'login', to: 'sessions#create'
   get 'signup', to: 'sessions#signup', as: 'signup'
+  post 'items/:id/add', to: 'items#add_to_cart', as: 'add_to_cart'
 
 end
