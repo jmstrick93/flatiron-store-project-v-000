@@ -11,6 +11,6 @@ module SessionsHelper
   end
 
   def logged_in?
-    session[:user_id] ? true : false
+    session[:user_id] && !session[:user_id].blank? ? true : false
   end
 end

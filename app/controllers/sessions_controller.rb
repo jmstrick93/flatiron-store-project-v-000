@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user = User.find_by(email: params[:email])
-      if @user.authenticate(params[:password])
+      if @user.valid_password?(params[:password])
         #result if login credentials are correct
         session[:user_id] = @user.id
         flash[:notice] = "Successfully Logged In"
