@@ -20,8 +20,6 @@ class SessionsController < ApplicationController
       flash[:alert] = "Invalid Email Address"
       redirect_to login_path
     end
-
-
   end
 
 end
