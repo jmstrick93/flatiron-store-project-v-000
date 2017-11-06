@@ -1,6 +1,7 @@
-<% if !logged_in? %>
-  <%= link_to "sign in", login_path %> |
-  <%= link_to "Sign up", signup_path %>
+<% if !user_signed_in? %>
+  <%= link_to "sign in", new_user_session_path %> |
+  <%= link_to "Sign up", new_user_registration_path %>
 <% else %>
   <p>Signed in as <%= current_user.email %></p>
+  <p><%= link_to "Sign Out", destroy_user_session_path %></p>
 <% end %>
