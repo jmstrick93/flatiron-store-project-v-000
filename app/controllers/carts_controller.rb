@@ -2,6 +2,7 @@ class CartsController < ApplicationController
 
   def assign_cart
     @user = current_user
+    #if there is a current cart, this goes to current cart page.  If not, assigns a new cart
     @cart = @user.return_or_set_current_cart
     redirect_to cart_path(@cart)
   end
