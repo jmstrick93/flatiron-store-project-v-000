@@ -3,5 +3,6 @@
   <%= link_to "Sign up", new_user_registration_path %>
 <% else %>
   <p>Signed in as <%= current_user.email %></p>
-  <p><%= link_to "Sign Out", destroy_user_session_path %></p>
+  <p><%= current_cart_button(current_user) %></p>
+  <p><%= link_to "Sign out", destroy_user_session_path, method: "delete" %></p>
 <% end %>
