@@ -11,9 +11,14 @@ class User < ActiveRecord::Base
 
 
   def current_cart=(cart)
-    cart.save if !cart.persisted?
-    self.current_cart_id = cart.id
-    self.save
+    unless cart == nil
+      cart.save if !cart.persisted?
+      self.current_cart_id = cart.id
+      self.save
+    else
+      self.current_cart_id = nil
+      self.save
+    end
   end
 
   def current_cart

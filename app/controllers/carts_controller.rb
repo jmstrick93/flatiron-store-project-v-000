@@ -17,8 +17,10 @@ class CartsController < ApplicationController
     @cart = @user.current_cart
     #reduce quantity of inventory of all items by the quantity of each line-item purchased
     @cart.remove_purchases_from_inventory
+    @cart.status = "submitted"
     @user.current_cart_id = nil
     @user.save
+    @cart.save
     redirect_to cart_path(@cart)
   end
 

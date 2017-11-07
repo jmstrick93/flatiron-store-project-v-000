@@ -8,3 +8,4 @@ class LineItemsController < ApplicationController
     redirect_to cart_path(@cart)
   end
 end
+  
