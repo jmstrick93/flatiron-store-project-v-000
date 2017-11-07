@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   post 'carts/:id/checkout', to: 'carts#checkout', as: 'checkout'
   get 'login', to: 'sessions#login', as: 'login'
+  get 'cartview', to: 'carts#assign_cart', as: 'assign_cart'
   post 'items/:id/add', to: 'items#add_to_cart', as: 'add_to_cart'
 
 end

@@ -1,10 +1,10 @@
 class CartsController < ApplicationController
 
-  # def assign_cart
-  #   @user = current_user
-  #   @cart = @user.return_or_set_current_cart
-  #   redirect_to cart_path(@cart)
-  # end
+  def assign_cart
+    @user = current_user
+    @cart = @user.return_or_set_current_cart
+    redirect_to cart_path(@cart)
+  end
 
   def show
     @user = current_user
